@@ -6,18 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4cd86d-85fa-4ccb-8d07-c2e42d2f6dfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Controllers/SpendingController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/SpendingApp.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665918252868</updated>
-      <workItem from="1665918253816" duration="1423000" />
+      <workItem from="1665918253816" duration="3934000" />
     </task>
     <servers />
   </component>
