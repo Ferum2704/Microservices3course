@@ -7,6 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ac4cd86d-85fa-4ccb-8d07-c2e42d2f6dfb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/spending/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/spending/deployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/spending/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/spending/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../k8s/spending/service.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/spending/service.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +75,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665918252868</updated>
-      <workItem from="1665918253816" duration="3934000" />
+      <workItem from="1665918253816" duration="6251000" />
+      <workItem from="1665992214840" duration="3887000" />
+      <workItem from="1666470288395" duration="1873000" />
+      <workItem from="1666540225155" duration="881000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
