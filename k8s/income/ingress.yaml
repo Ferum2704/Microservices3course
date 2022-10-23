@@ -8,10 +8,10 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api/income-app/
+          - path: /income
             pathType: "Prefix"
             backend:
               service:
                 name: income-service
                 port:
-                  number: 80
+                  number: 8080
