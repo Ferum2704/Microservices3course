@@ -1,4 +1,3 @@
-const UNKNOWN = "UNKNOWN";
 const UNAVAILABLE = "UNAVAILABLE";
 const BASE_API = "";
 const DEFAULT_HEADERS = {
@@ -11,6 +10,12 @@ CreateEventListener("spendingAddButton", "spendingAddResult", "/spending/add", "
 CreateEventListener("spendingUpdateButton", "spendingUpdateResult", "/spending/update/1", "PUT");
 CreateEventListener("spendingGetButton", "spendingGetResult", "/spending/get/2", "GET");
 CreateEventListener("spendingDeleteButton", "spendingDeleteResult", "/spending/delete/3", "DELETE");
+
+CreateEventListener("IncomePingButton", "IncomePingResult", "/Income/ping", "GET");
+CreateEventListener("IncomeAddButton", "IncomeAddResult", "/Income/add", "POST");
+CreateEventListener("IncomeUpdateButton", "IncomeUpdateResult", "/Income/update/1", "PUT");
+CreateEventListener("IncomeGetButton", "IncomeGetResult", "/Income/get/2", "GET");
+CreateEventListener("IncomeDeleteButton", "IncomeDeleteResult", "/Income/delete/3", "DELETE");
 
 async function CreateEventListener(buttonId, resultId, requestUrl, requestMethod) {
     let button = document.getElementById(buttonId);
