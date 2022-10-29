@@ -6,8 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4cd86d-85fa-4ccb-8d07-c2e42d2f6dfb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Client/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/.dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Client/client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Client/src/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Client/src/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +78,7 @@
       <workItem from="1665992214840" duration="3887000" />
       <workItem from="1666470288395" duration="1873000" />
       <workItem from="1666540225155" duration="6175000" />
+      <workItem from="1667045271077" duration="613000" />
     </task>
     <servers />
   </component>

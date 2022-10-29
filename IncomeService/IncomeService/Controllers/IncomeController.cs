@@ -22,10 +22,10 @@ namespace IncomeService.Controllers
             return Ok("pong");
         }
 
-        [HttpGet]
-        public IActionResult GetIncomes()
+        [HttpPost]
+        public IActionResult Add()
         {
-            return Ok(_records);
+            return Ok(_records.FirstOrDefault());
         }
 
         [HttpGet]
