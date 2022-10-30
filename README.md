@@ -24,7 +24,9 @@
   - Розгортання додатку
     - У вікні командного рядка перейдіть у папку `...\Microservices_3course`
     - Виконайте команду `minikube addons enable ingress` для роботи з ingress
-    - Виконайте команду `kubectl apply -f k8s/spending` розгортання застосунку
+    - Виконайте команду `kubectl apply -f k8s/spending` для розгортання SpendingService
+    - Виконайте команду `kubectl apply -f k8s/income` для розгортаня IncomeService
+    - Виконайте команду `kubectl apply -f k8s/client` для розгортання клієнту
    
    **Тепер можна перевіряти роботу застосунку увівши в браузері `localhost/src/index.html`**
   
