@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IncomeService.Controllers
 {
-    [Route("[controller]/[action]")]
+    [Route("[controller]")]
     [ApiController]
     public class IncomeController : ControllerBase
     {
@@ -17,18 +17,21 @@ namespace IncomeService.Controllers
         };
 
         [HttpGet]
+        [Route("ping")]
         public IActionResult Ping()
         {
             return Ok("pong");
         }
 
         [HttpPost]
+        [Route("add")]
         public IActionResult Add()
         {
             return Ok(_records.FirstOrDefault());
         }
 
         [HttpGet]
+        [Route("get/{id:int}")]
         public IActionResult GetIncomeById(int? id)
         {
             var foundRecord = _records.SingleOrDefault(r => r.Id == id);
@@ -41,9 +44,10 @@ namespace IncomeService.Controllers
         }
 
         [HttpPut]
-        public IActionResult UpdateIncome(IncomeRecord incomeRecord)
+        [Route("update/{id:int}")]
+        public IActionResult UpdateIncome(int id)
         {
-            var foundRecord = _records.SingleOrDefault(r => r.Id == incomeRecord.Id);
+            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
             if (foundRecord == null)
             {
                 return NotFound("No record with such id");
@@ -54,6 +58,7 @@ namespace IncomeService.Controllers
         }
 
         [HttpDelete]
+        [Route("delete/{id:int}")]
         public IActionResult DeleteIncome(int? id)
         {
             var foundRecord = _records.SingleOrDefault(r => r.Id == id);
