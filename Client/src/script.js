@@ -11,11 +11,11 @@ CreateEventListener("spendingUpdateButton", "spendingUpdateResult", "/spending/u
 CreateEventListener("spendingGetButton", "spendingGetResult", "/spending/get/2", "GET");
 CreateEventListener("spendingDeleteButton", "spendingDeleteResult", "/spending/delete/3", "DELETE");
 
-CreateEventListener("IncomePingButton", "IncomePingResult", "/Income/ping", "GET");
-CreateEventListener("IncomeAddButton", "IncomeAddResult", "/Income/add", "POST");
-CreateEventListener("IncomeUpdateButton", "IncomeUpdateResult", "/Income/update/1", "PUT");
-CreateEventListener("IncomeGetButton", "IncomeGetResult", "/Income/get/2", "GET");
-CreateEventListener("IncomeDeleteButton", "IncomeDeleteResult", "/Income/delete/3", "DELETE");
+CreateEventListener("IncomePingButton", "IncomePingResult", "/income/ping", "GET");
+CreateEventListener("IncomeAddButton", "IncomeAddResult", "/income/add", "POST");
+CreateEventListener("IncomeUpdateButton", "IncomeUpdateResult", "/income/update/1", "PUT");
+CreateEventListener("IncomeGetButton", "IncomeGetResult", "/income/get/2", "GET");
+CreateEventListener("IncomeDeleteButton", "IncomeDeleteResult", "/income/delete/3", "DELETE");
 
 async function CreateEventListener(buttonId, resultId, requestUrl, requestMethod) {
     let button = document.getElementById(buttonId);
