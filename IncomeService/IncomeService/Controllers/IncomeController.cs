@@ -1,66 +1,73 @@
 ﻿using IncomeService.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IncomeService.Controllers
 {
-    [Route("[controller]/[action]")]
+    [Route("[controller]")]
     [ApiController]
     public class IncomeController : ControllerBase
     {
-        List<IncomeCategory> categories = new List<IncomeCategory>()
+        private readonly List<IncomeRecord> _records = new()
         {
-            new IncomeCategory(){Id = 1, Name ="Job salary"},
-            new IncomeCategory(){Id= 2, Name = "Scholarship"},
-            new IncomeCategory(){Id = 3, Name = "Present"}
+            new IncomeRecord() {Id = 1, Sum = 200, Date = DateTime.ParseExact("4/1/2022", "M/d/yyyy", null)},
+            new IncomeRecord() {Id = 2, Sum = 1000, Date = DateTime.ParseExact("4/29/2022", "M/d/yyyy", null)},
+            new IncomeRecord() {Id = 3, Sum = 150, Date = DateTime.ParseExact("5/18/2022", "M/d/yyyy", null)},
+            new IncomeRecord() {Id = 4, Sum = 200, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
+            new IncomeRecord() {Id = 5, Sum = 500, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
         };
-        List<IncomeRecord> records = new List<IncomeRecord>()
-        {
-            new IncomeRecord(){Id = 1, Sum = 200, Date = DateTime.ParseExact("4/1/2022", "M/d/yyyy", null)},
-            new IncomeRecord(){Id = 2, Sum = 1000, Date = DateTime.ParseExact("4/29/2022", "M/d/yyyy", null)},
-            new IncomeRecord(){Id = 3, Sum = 150, Date = DateTime.ParseExact("5/18/2022", "M/d/yyyy", null)},
-            new IncomeRecord(){Id = 4, Sum = 200, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
-            new IncomeRecord(){Id = 5, Sum = 500, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
-        };
+
         [HttpGet]
-        public IActionResult GetIncomes()
+        [Route("ping")]
+        public IActionResult Ping()
         {
-            return Ok(records);
+            return Ok("pong");
         }
+
+        [HttpPost]
+        [Route("add")]
+        public IActionResult Add()
+        {
+            return Ok(_records.FirstOrDefault());
+        }
+
         [HttpGet]
+        [Route("get/{id:int}")]
         public IActionResult GetIncomeById(int? id)
         {
-            IncomeRecord? foundRecord = records.Where(r => r.Id == id).SingleOrDefault();
+            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
             if (foundRecord != null)
             {
                 return Ok(foundRecord);
             }
+
             return NotFound("No record with such id");
         }
+
         [HttpPut]
-        public IActionResult UpdateIncome(IncomeRecord incomeRecord)
+        [Route("update/{id:int}")]
+        public IActionResult UpdateIncome(int id)
         {
-            IncomeRecord? foundRecord = records.Where(r => r.Id == incomeRecord.Id).SingleOrDefault();
-            if (foundRecord != null)
+            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
+            if (foundRecord == null)
             {
-                foundRecord = incomeRecord;
-                return Ok("Update was successful");
+                return NotFound("No record with such id");
             }
-            return NotFound("No record with such id");
+
+            return Ok("Update was successful");
+
         }
+
         [HttpDelete]
+        [Route("delete/{id:int}")]
         public IActionResult DeleteIncome(int? id)
         {
-            IncomeRecord? foundRecord = records.Where(r => r.Id == id).SingleOrDefault();
-            if (foundRecord != null)
+            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
+            if (foundRecord == null)
             {
-                if (records.Remove(foundRecord))
-                {
-                    return Ok("Delete was successful");
-                }
-                return StatusCode(500, "Something went wrong");
+                return NotFound("No record with such id");
             }
-            return NotFound("No record with such id");
+
+            return _records.Remove(foundRecord) ? Ok("Delete was successful") : StatusCode(500, "Something went wrong");
         }
     }
 }

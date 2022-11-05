@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-top box-shadow mb-3">
+            <div class="container">
+                <a id="home" class="navbar-brand">EWalletApi</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container main">
+
+        <h1>EWallet</h1>
+
+        <div style="margin-top: 5%; margin-bottom: 20%;">
+            <h3>Spendings</h3>
+
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Ping</h3>
+                <button id="spendingPingButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="spendingPingResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Add</h3>
+                <button id="spendingAddButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="spendingAddResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Update</h3>
+                <button id="spendingUpdateButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="spendingUpdateResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Get</h3>
+                <button id="spendingGetButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="spendingGetResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Delete</h3>
+                <button id="spendingDeleteButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="spendingDeleteResult"></textarea>
+            </div>
+        </div>
+
+        <div style="margin-top: 5%; margin-bottom: 20%;">
+            <h3>Incomes</h3>
+
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Ping</h3>
+                <button id="IncomePingButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="IncomePingResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Add</h3>
+                <button id="IncomeAddButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="IncomeAddResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Update</h3>
+                <button id="IncomeUpdateButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="IncomeUpdateResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Get</h3>
+                <button id="IncomeGetButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="IncomeGetResult"></textarea>
+            </div>
+    
+            <div class="divInline">
+                <h3 style="margin-right: 60px;">Delete</h3>
+                <button id="IncomeDeleteButton" style="margin-right: 60px;" type="submit" class="btn btn-success">Make Request</button>
+                <h6 style="margin-right: 60px;">Result:</h6>
+                <textarea id="IncomeDeleteResult"></textarea>
+            </div>
+        </div>
+        
+    </div>
+
+        <script src="script.js"></script>
+</body>
+</html>

@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spending-service
+  name: income-service
 spec:
   type: ClusterIP      # тип доступу до сервісу, ClusterIp - значення за замовчуванням і може бути пропущене
   ports:
     - port: 8080         # порт по якому можна звератись до сервісу
       targetPort: 80 # порт контейнера
   selector:
-    app: spending      # селектор, всі Pod з даним селектором, будуть підключені до даного сервісу
+    app: income      # селектор, всі Pod з даним селектором, будуть підключені до даного сервісу
