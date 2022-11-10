@@ -5,7 +5,7 @@ namespace SpendingApp.Persistence;
 public class SpendingContext : DbContext
 {
     protected readonly IConfiguration Configuration;
-    public DbSet<PingItem> Pings { get; set; }
+    public DbSet<Spending> Spendings { get; set; }
 
     public SpendingContext(IConfiguration configuration)
     {
@@ -18,13 +18,17 @@ public class SpendingContext : DbContext
     }
 }
 
-public class PingItem
+public class Spending
 {
-    public PingItem(int counter)
-    {
-        Counter = counter;
-    }
-
     public int Id { get; set; }
-    public int Counter { get; set; }
-};
+    public Currency Currency { get; set; }
+    public int Value { get; set; }
+    public string Item { get; set; }
+}
+
+public enum Currency : byte
+{
+    Uah,
+    Usd,
+    Eur,
+}

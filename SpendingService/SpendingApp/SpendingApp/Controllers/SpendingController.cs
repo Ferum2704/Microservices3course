@@ -21,26 +21,19 @@ public class SpendingController : ControllerBase
         return Ok("pong");
     }
 
-    [HttpGet]
-    [Route("ping-item")]
-    public async Task<IActionResult> PingItem(int counter)
-    {
-        var addedPing = _context.Pings.Add(new PingItem(counter));
-        await _context.SaveChangesAsync();
-
-        return Ok(addedPing.Entity.Id);
-    }
-
     [HttpPost]
     [Route("add")]
-    public IActionResult Add()
+    public async Task<IActionResult> Add(CancellationToken ct)
     {
-        return Ok(new
+        var added = _context.Spendings.Add(new Spending
         {
-            Currency = "UAH",
-            Value = "2001",
+            Currency = Currency.Uah,
+            Value = 2001,
             Item = "Food"
         });
+        await _context.SaveChangesAsync(ct);
+
+        return Ok(added.Entity);
     }
 
     [HttpPut]
@@ -52,7 +45,7 @@ public class SpendingController : ControllerBase
             Id = id,
             Currency = "UAH",
             Value = "2000",
-            Item = "Food"
+            Item = "Food",
         });
     }
 
