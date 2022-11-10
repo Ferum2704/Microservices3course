@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SpendingApp.Persistence;
 
 namespace SpendingApp.Controllers;
 
@@ -6,11 +7,28 @@ namespace SpendingApp.Controllers;
 [Route("[controller]")]
 public class SpendingController : ControllerBase
 {
+    private readonly SpendingContext _context;
+
+    public SpendingController(SpendingContext context)
+    {
+        _context = context;
+    }
+
     [HttpGet]
     [Route("ping")]
     public IActionResult Ping()
     {
         return Ok("pong");
+    }
+
+    [HttpGet]
+    [Route("ping-item")]
+    public async Task<IActionResult> PingItem(int counter)
+    {
+        var addedPing = _context.Pings.Add(new PingItem(counter));
+        await _context.SaveChangesAsync();
+
+        return Ok(addedPing.Entity.Id);
     }
 
     [HttpPost]

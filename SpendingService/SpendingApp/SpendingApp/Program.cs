@@ -1,8 +1,11 @@
+using SpendingApp.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddDbContext<SpendingContext>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("", policy =>
