@@ -17,13 +17,11 @@ spec:
         image: mcr.microsoft.com/mssql/server:2019-latest
         ports:
         - containerPort: 1433
-        env:
-        - name: MSSQL_PID
-          value: "Developer"
-        - name: ACCEPT_EULA
-          value: "Y"
-        - name: SA_PASSWORD
-          value: "vV5r9tn0M4@"
+        envFrom:
+          - configMapRef:
+              name: mssql-config
+          - secretRef:
+              name: mssql-secret
         volumeMounts:
         - name: mssqldb
           mountPath: /var/opt/mssql/data
