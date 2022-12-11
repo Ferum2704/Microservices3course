@@ -22,4 +22,11 @@
       <Folder Include="Migrations" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Migrations\20221110195816_InitialMigration.cs" />
+      <Compile Remove="Migrations\20221110195816_InitialMigration.Designer.cs" />
+      <Compile Remove="Migrations\20221110213358_CreateSpendingTable.cs" />
+      <Compile Remove="Migrations\20221110213358_CreateSpendingTable.Designer.cs" />
+    </ItemGroup>
+
 </Project>
