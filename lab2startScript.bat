@@ -1,4 +1,5 @@
 @echo
+minikube -p minikube docker-env --shell powershell | Invoke-Expression
 docker pull ferumchick/microservices3course:spending0.1
 docker tag ferumchick/microservices3course:spending0.1 spending:latest
 docker pull ferumchick/microservices3course:income0.1

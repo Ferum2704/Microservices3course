@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: mssql-config
 data:
-  MSSQL_DB: lab2
+  MSSQL_PID: Developer
+  ACCEPT_EULA: "Y"

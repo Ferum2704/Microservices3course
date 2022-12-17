@@ -1,11 +1,11 @@
 ﻿using IncomeService.DataAccess.IRepository;
 using IncomeService.Models;
 
-namespace IncomeService.DataAccess.Repository
+namespace IncomeService.Persistence.Repository
 {
     public class IncomeCategoryRepository : Repository<IncomeCategory>, IIncomeCategoryRepository
     {
-        public IncomeCategoryRepository(ApplicationDbContext context) : base(context)
+        public IncomeCategoryRepository(IncomeDbContext context) : base(context)
         {
         }
     }

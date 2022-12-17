@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace IncomeService.DataAccess.Repository
+namespace IncomeService.Persistence.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly ApplicationDbContext _context;
+        protected readonly IncomeDbContext _context;
         protected DbSet<T> dbSet;
-        public Repository(ApplicationDbContext context)
+        public Repository(IncomeDbContext context)
         {
             _context = context;
             dbSet = _context.Set<T>();

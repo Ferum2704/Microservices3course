@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 
-namespace IncomeService
+namespace IncomeService.Persistence
 {
     public static class MigrateExtension
     {
@@ -10,7 +10,7 @@ namespace IncomeService
         {
             using (var scope = builder.ApplicationServices.CreateScope())
             {
-                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                var context = scope.ServiceProvider.GetRequiredService<IncomeDbContext>();
                 context.Database.Migrate();
             }
             return builder;

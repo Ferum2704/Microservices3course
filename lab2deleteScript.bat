@@ -9,11 +9,10 @@ kubectl delete deploy income-deployment
 kubectl delete service income-service
 kubectl delete ingress income-ingress
 kubectl delete configmap mssql-config
-kubectl delete service mssql
+kubectl delete service mssql-service
 kubectl delete deploy mssql-deployment
 kubectl delete pvc mssql-pvc
 kubectl delete secret mssql-secret
-kubectl delete configmap mssql-config
 docker rmi ferumchick/microservices3course:spending0.1
 docker rmi ferumchick/microservices3course:income0.1
 docker rmi ferumchick/microservices3course:client0.1
