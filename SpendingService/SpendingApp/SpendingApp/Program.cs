@@ -1,12 +1,19 @@
-using SpendingApp.Persistence;
+using SpendingApp.Persistence.DI;
 using SpendingApp.Persistence.Migrations.Helpers;
+using SpendingApp.Repositories.DI;
+using SpendingApp.Services.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<SpendingContext>();
+
+builder.Services
+    .AddPersistence()
+    .AddRepositories()
+    .AddServices();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("", policy =>

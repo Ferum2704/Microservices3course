@@ -9,11 +9,6 @@ public static class MigrationsHelper
         using var scope = app.Services.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<SpendingContext>();
 
-        /*if (!app.Environment.IsProduction())
-        {
-            return;
-        }*/
-
         try
         {
             app.Logger.LogError("Migrations applying started!");

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SpendingApp.Models;
 
 namespace SpendingApp.Persistence;
 
@@ -16,19 +17,4 @@ public class SpendingContext : DbContext
     {
         optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Spending"));
     }
-}
-
-public class Spending
-{
-    public int Id { get; set; }
-    public Currency Currency { get; set; }
-    public int Value { get; set; }
-    public string Item { get; set; }
-}
-
-public enum Currency : byte
-{
-    Uah,
-    Usd,
-    Eur,
 }
