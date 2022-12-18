@@ -1,4 +1,4 @@
-﻿namespace IncomeService
+﻿namespace IncomeService.Models
 {
     public class IncomeCategory
     {

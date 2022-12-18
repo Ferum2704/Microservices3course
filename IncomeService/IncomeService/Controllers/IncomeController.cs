@@ -1,5 +1,7 @@
 ﻿using IncomeService.Models;
+using IncomeService.Persistence;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace IncomeService.Controllers
 {
@@ -7,6 +9,11 @@ namespace IncomeService.Controllers
     [ApiController]
     public class IncomeController : ControllerBase
     {
+        private readonly IncomeDbContext _context;
+        public IncomeController(IncomeDbContext context)
+        {
+            _context = context;
+        }
         private readonly List<IncomeRecord> _records = new()
         {
             new IncomeRecord() {Id = 1, Sum = 200, Date = DateTime.ParseExact("4/1/2022", "M/d/yyyy", null)},
@@ -25,9 +32,22 @@ namespace IncomeService.Controllers
 
         [HttpPost]
         [Route("add")]
-        public IActionResult Add()
+        public async Task<IActionResult> Add(CancellationToken ct)
         {
-            return Ok(_records.FirstOrDefault());
+            try
+            {
+                var added = _context.IncomeCategories.Add(new IncomeCategory
+                {
+                    Name = "Category1"
+                });
+                await _context.SaveChangesAsync(ct);
+
+                return Ok(added.Entity);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpGet]

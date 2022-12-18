@@ -13,7 +13,7 @@ spec:
        app: spending               # мітка Pod по якому вона буде зв'язана з Deployment та Service
     spec:
       containers:
-        - image: spending:latest       # образ Docker
+        - image: spending:0.1       # образ Docker
           imagePullPolicy: Never   # вказує k8s, що образ не потрібно завантажувати (варто використовувати лише для випадків, коли образи локальні)
           name: spending           # ім'я контейнеру
           ports:
