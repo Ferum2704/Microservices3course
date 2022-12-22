@@ -13,11 +13,7 @@ kubectl delete service mssql-service
 kubectl delete deploy mssql-deployment
 kubectl delete pvc mssql-pvc
 kubectl delete secret mssql-secret
-docker rmi ferumchick/microservices3course:spending0.1
-docker rmi ferumchick/microservices3course:income0.1
-docker rmi ferumchick/microservices3course:client0.1
 docker rmi client:0.1 --force
-docker rmi spending:latest --force
-docker rmi income:latest --force
-docker rmi mcr.microsoft.com/mssql/server:2019-latest
+docker rmi spending:0.1 --force
+docker rmi income:0.1 --force
 pause

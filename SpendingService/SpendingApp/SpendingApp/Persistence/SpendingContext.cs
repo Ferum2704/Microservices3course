@@ -15,6 +15,6 @@ public class SpendingContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(Configuration.GetConnectionString("Spending"));
+        optionsBuilder.UseSqlServer(Configuration.GetConnectionString("SpendingDb"));
     }
 }
