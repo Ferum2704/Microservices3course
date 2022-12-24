@@ -13,7 +13,4 @@ kubectl delete service mssql-service
 kubectl delete deploy mssql-deployment
 kubectl delete pvc mssql-pvc
 kubectl delete secret mssql-secret
-docker rmi client:0.1 --force
-docker rmi spending:0.1 --force
-docker rmi income:0.1 --force
 pause
