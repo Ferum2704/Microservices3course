@@ -1,0 +1,19 @@
+replicaCount: 1
+
+selector:
+  app: spending
+
+image:
+  name: spending
+  tag: 0.1
+  port: 8080
+
+service:
+  ports:
+    port: 80
+    containerPort: 8080
+
+ingress:
+  path: /spending
+  port: http
+  number: 8080
