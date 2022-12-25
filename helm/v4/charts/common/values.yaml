@@ -1,0 +1,21 @@
+replicaCount: 1
+
+nameOverride: ""
+
+image:
+  name: ""
+  tag: ""
+
+service:
+  ports: []
+
+ingress:
+  path: /
+  port: http
+  number: 8080
+
+configs: {}
+
+secrets: {}
+
+common: {}

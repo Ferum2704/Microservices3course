@@ -1,0 +1,13 @@
+apiVersion: v2
+type: application
+version: 0.0.4
+name: demo
+appVersion: "0.1"
+description: "demo"
+dependencies:
+  - name: mssql
+    version: 0.1.1
+    repository: https://licenseware.github.io/charts/
+  - name: common
+    version: 0.1.0
+    repository: file://charts/common

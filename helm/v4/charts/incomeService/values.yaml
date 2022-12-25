@@ -1,0 +1,13 @@
+image:
+  name: income
+  tag: 0.1
+
+service:
+  ports:
+    port: 8080
+    containerPort: 80
+
+ingress:
+  path: /income
+  port: http
+  number: 8080

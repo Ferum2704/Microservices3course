@@ -1,0 +1,16 @@
+mssql:
+  config:
+    saPassword: "byA8xhFG4OUb6MrjpB9tflX7Ecv2skcp"
+  livenessProbe:
+    initialDelaySeconds: 150
+    timeoutSeconds: 90
+  readinessProbe:
+    initialDelaySeconds: 150
+    timeoutSeconds: 90
+  extraVolumeMounts:
+    - name: mssqldb
+      mountPath: /var/opt/mssql
+  extraVolumes:
+    - name: mssqldb
+      persistentVolumeClaim:
+        claimName: mssql-pvc
