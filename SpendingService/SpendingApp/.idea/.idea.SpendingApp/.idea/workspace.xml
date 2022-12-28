@@ -8,32 +8,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4cd86d-85fa-4ccb-8d07-c2e42d2f6dfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Behaviours/Exceptions/NotFoundException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Models/Currency.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Models/Spending.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Persistence/DI/AddPersistenceDependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/DI/AddRepositoriesDependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/Interfaces/IRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/Interfaces/ISpendingRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/Interfaces/IUnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/Repository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/SpendingRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Repositories/UnitOfWork.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/DI/AddServicesDependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/ISpendingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/SpendingService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/DI/AddDataAccessDependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/IRepository/IUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/DI/AddPersistenceDependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Migrations/20221228215021_IncomeRecordsReimplement.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Migrations/20221228215021_IncomeRecordsReimplement.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Repository/IncomeRecordsRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Repository/UnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/DI/AddServicesDependencyInjection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/IncomeRecordsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/Interfaces/IIncomeRecordsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SpendingApp/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SpendingApp/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SpendingApp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SpendingApp.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/shelf/Changes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/shelf/Changes/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/SpendingController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20221110195816_InitialMigration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20221110195816_InitialMigration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20221110213358_CreateSpendingTable.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/20221110213358_CreateSpendingTable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Migrations/SpendingContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/SpendingContext.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Properties/launchSettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpendingApp.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/IRepository/IIncomeCategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/IRepository/IIncomeRecordsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/IRepository/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/IRepository/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Models/IncomeCategory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Models/IncomeRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Models/IncomeRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/IncomeDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/IncomeDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/MigrateExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/MigrateExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Migrations/IncomeDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Migrations/IncomeDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Repository/IncomeCategoryRepository.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Repository/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/Repository/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Controllers/SpendingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Web/Controllers/SpendingController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpendingApp/Persistence/Migrations/Helpers/MigrationsHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Persistence/Migrations/Helpers/MigrationsHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Persistence/SpendingContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Persistence/SpendingContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/SpendingApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/SpendingApp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../k8s/mssql/deployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/mssql/deployment.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../k8s/mssql/secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/mssql/secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../k8s/mssql/storage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/mssql/storage.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../k8s/postgres/secret.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/postgres/secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../k8s/postgres/storage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../k8s/postgres/storage.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/client/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/client/charts/common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/incomeService/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/incomeService/charts/common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/spendingService/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/spendingService/charts/common-0.1.0.tgz" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,11 +76,12 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d4f4ac7db6d2c5d183ab2d92602280ed4349fd6e6a1b6313546b3d01fdab5/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6518e12429e640b855e84dbcb556279a6dcdecc0f25132fcbc5510f956f771e7/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1ba52dc0b103422eba91ad87a1aa9fe314378/7c/c646a165/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/DI/AddDataAccessDependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6518e12429e640b855e84dbcb556279a6dcdecc0f25132fcbc5510f956f771e7/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d4f4ac7db6d2c5d183ab2d92602280ed4349fd6e6a1b6313546b3d01fdab5/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -135,6 +160,9 @@
       <workItem from="1670766869123" duration="2410000" />
       <workItem from="1671131317839" duration="594000" />
       <workItem from="1671346347114" duration="5371000" />
+      <workItem from="1672071775644" duration="3262000" />
+      <workItem from="1672212027598" duration="882000" />
+      <workItem from="1672256837318" duration="5256000" />
     </task>
     <servers />
   </component>
@@ -143,6 +171,16 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

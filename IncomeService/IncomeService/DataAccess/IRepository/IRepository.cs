@@ -6,8 +6,8 @@ namespace IncomeService.DataAccess.IRepository
     {
         public IEnumerable<T> GetAll();
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter);
-        public void Add(T entity);
-        public void Update(T entity);
+        public T Add(T entity);
+        public T Update(T entity);
         public void Delete(Expression<Func<T, bool>> filter);
     }
 }

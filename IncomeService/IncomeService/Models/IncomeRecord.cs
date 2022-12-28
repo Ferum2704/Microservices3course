@@ -3,7 +3,7 @@
     public class IncomeRecord
     {
         public int Id { get; set; }
-        public IncomeCategory Category { get; set; } = new IncomeCategory();
+        public string CategoryName { get; set; }
         public decimal Sum { get; set; }
         public DateTime Date { get; set; }
     }

@@ -1,9 +1,7 @@
-using IncomeService;
-using IncomeService.DataAccess;
-using IncomeService.DataAccess.IRepository;
+using IncomeService.DataAccess.DI;
 using IncomeService.Persistence;
-using IncomeService.Persistence.Repository;
-using Microsoft.EntityFrameworkCore;
+using IncomeService.Persistence.DI;
+using IncomeService.Services.DI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +15,11 @@ builder.Services.AddCors(options =>
         policy.AllowAnyMethod();
     });
 });
-builder.Services.AddScoped<IIncomeCategoryRepository, IncomeCategoryRepository>();
+builder.Services
+    .AddPersistence()
+    .AddDataAccess()
+    .AddServices();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

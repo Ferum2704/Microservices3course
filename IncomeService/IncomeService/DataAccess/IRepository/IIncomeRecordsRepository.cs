@@ -2,7 +2,7 @@
 
 namespace IncomeService.DataAccess.IRepository
 {
-    public interface IIncomeCategoryRepository:IRepository<IncomeCategory>
+    public interface IIncomeRecordsRepository:IRepository<IncomeRecord>
     {
     }
 }

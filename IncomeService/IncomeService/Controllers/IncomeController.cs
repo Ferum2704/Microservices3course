@@ -1,7 +1,7 @@
 ﻿using IncomeService.Models;
-using IncomeService.Persistence;
+using IncomeService.Services;
+using IncomeService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace IncomeService.Controllers
 {
@@ -9,19 +9,12 @@ namespace IncomeService.Controllers
     [ApiController]
     public class IncomeController : ControllerBase
     {
-        private readonly IncomeDbContext _context;
-        public IncomeController(IncomeDbContext context)
+        private readonly IIncomeRecordsService _incomeRecordsService;
+
+        public IncomeController(IIncomeRecordsService incomeRecordsService)
         {
-            _context = context;
+            _incomeRecordsService = incomeRecordsService;
         }
-        private readonly List<IncomeRecord> _records = new()
-        {
-            new IncomeRecord() {Id = 1, Sum = 200, Date = DateTime.ParseExact("4/1/2022", "M/d/yyyy", null)},
-            new IncomeRecord() {Id = 2, Sum = 1000, Date = DateTime.ParseExact("4/29/2022", "M/d/yyyy", null)},
-            new IncomeRecord() {Id = 3, Sum = 150, Date = DateTime.ParseExact("5/18/2022", "M/d/yyyy", null)},
-            new IncomeRecord() {Id = 4, Sum = 200, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
-            new IncomeRecord() {Id = 5, Sum = 500, Date = DateTime.ParseExact("7/7/2022", "M/d/yyyy", null)},
-        };
 
         [HttpGet]
         [Route("ping")]
@@ -32,17 +25,12 @@ namespace IncomeService.Controllers
 
         [HttpPost]
         [Route("add")]
-        public async Task<IActionResult> Add(CancellationToken ct)
+        public async Task<IActionResult> Add(IncomeRecord model, CancellationToken ct)
         {
             try
             {
-                var added = _context.IncomeCategories.Add(new IncomeCategory
-                {
-                    Name = "Category1"
-                });
-                await _context.SaveChangesAsync(ct);
-
-                return Ok(added.Entity);
+                var added = await _incomeRecordsService.AddAsync(model, ct);
+                return Ok(added);
             }
             catch (Exception ex)
             {
@@ -52,42 +40,26 @@ namespace IncomeService.Controllers
 
         [HttpGet]
         [Route("get/{id:int}")]
-        public IActionResult GetIncomeById(int? id)
+        public IActionResult GetIncomeById(int id, CancellationToken ct)
         {
-            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
-            if (foundRecord != null)
-            {
-                return Ok(foundRecord);
-            }
-
-            return NotFound("No record with such id");
+            var model = _incomeRecordsService.GetByIdAsync(id, ct)!;
+            return Ok(model);
         }
 
         [HttpPut]
-        [Route("update/{id:int}")]
-        public IActionResult UpdateIncome(int id)
+        [Route("update")]
+        public async Task<IActionResult> UpdateIncome(IncomeRecord model, CancellationToken ct)
         {
-            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
-            if (foundRecord == null)
-            {
-                return NotFound("No record with such id");
-            }
-
-            return Ok("Update was successful");
-
+            var updated = await _incomeRecordsService.UpdateAsync(model, ct);
+            return Ok(updated);
         }
 
         [HttpDelete]
         [Route("delete/{id:int}")]
-        public IActionResult DeleteIncome(int? id)
+        public async Task<IActionResult> DeleteIncome(int id, CancellationToken ct)
         {
-            var foundRecord = _records.SingleOrDefault(r => r.Id == id);
-            if (foundRecord == null)
-            {
-                return NotFound("No record with such id");
-            }
-
-            return _records.Remove(foundRecord) ? Ok("Delete was successful") : StatusCode(500, "Something went wrong");
+            await _incomeRecordsService.RemoveByIdAsync(id, ct);
+            return Ok();
         }
     }
 }

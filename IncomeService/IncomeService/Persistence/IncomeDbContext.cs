@@ -5,7 +5,6 @@ namespace IncomeService.Persistence
 {
     public class IncomeDbContext : DbContext
     {
-        public DbSet<IncomeCategory> IncomeCategories { get; set; }
         public DbSet<IncomeRecord> IncomeRecords { get; set; }
         protected readonly IConfiguration Configuration;
 

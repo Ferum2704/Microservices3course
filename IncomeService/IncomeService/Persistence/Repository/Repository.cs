@@ -6,37 +6,39 @@ namespace IncomeService.Persistence.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly IncomeDbContext _context;
-        protected DbSet<T> dbSet;
+        protected readonly IncomeDbContext Context;
+        protected readonly DbSet<T> DbSet;
+
         public Repository(IncomeDbContext context)
         {
-            _context = context;
-            dbSet = _context.Set<T>();
+            Context = context;
+            DbSet = Context.Set<T>();
         }
-        public void Add(T entity)
+
+        public T Add(T entity)
         {
-            dbSet.Add(entity);
+            return DbSet.Add(entity).Entity;
         }
 
         public void Delete(Expression<Func<T, bool>> filter)
         {
-            dbSet.Remove(GetFirstOrDefault(filter));
+            DbSet.Remove(GetFirstOrDefault(filter));
         }
 
         public IEnumerable<T> GetAll()
         {
-            return dbSet.ToList();
+            return DbSet.ToList();
         }
 
         public T GetFirstOrDefault(Expression<Func<T, bool>> filter)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query = DbSet;
             return query.Where(filter).FirstOrDefault();
         }
 
-        public void Update(T entity)
+        public T Update(T entity)
         {
-            dbSet.Update(entity);
+            return DbSet.Update(entity).Entity;
         }
     }
 }
