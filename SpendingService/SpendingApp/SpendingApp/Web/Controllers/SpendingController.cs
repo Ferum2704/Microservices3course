@@ -49,6 +49,15 @@ public class SpendingController : ControllerBase
         return Ok(spending);
     }
 
+    [HttpGet]
+    [Route("get-all")]
+    public async Task<IActionResult> GetAll(CancellationToken ct)
+    {
+        var spending = await _spendingService.GetByAllAsync(ct);
+
+        return Ok(spending);
+    }
+
     [HttpDelete]
     [Route("delete/{id:int}")]
     public async Task<IActionResult> Delete(int id, CancellationToken ct)
