@@ -38,6 +38,11 @@ public class SpendingService : ISpendingService
         return await _unitOfWork.Spendings.GetByIdAsync(id, ct);
     }
 
+    public async Task<List<Spending>> GetByAllAsync(CancellationToken ct)
+    {
+        return await _unitOfWork.Spendings.GetAllAsync(ct);
+    }
+
     public async Task<Spending> UpdateAsync(Spending spending, CancellationToken ct)
     {
         var updated = _unitOfWork.Spendings.Update(spending);

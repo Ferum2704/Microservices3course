@@ -9,6 +9,7 @@ public interface ISpendingService
     Task RemoveByIdAsync(int id, CancellationToken ct);
 
     Task<Spending?> GetByIdAsync(int id, CancellationToken ct);
+    Task<List<Spending>> GetByAllAsync(CancellationToken ct);
 
     Task<Spending> UpdateAsync(Spending spending, CancellationToken ct);
 }

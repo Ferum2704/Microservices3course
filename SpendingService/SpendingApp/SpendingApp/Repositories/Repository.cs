@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using SpendingApp.Persistence;
 using SpendingApp.Repositories.Interfaces;
 
@@ -11,6 +12,11 @@ public class Repository<T> : IRepository<T> where T : class
     public Repository(SpendingContext context)
     {
         Context = context;
+    }
+
+    public async Task<List<T>> GetAllAsync(CancellationToken ct)
+    {
+        return await Context.Set<T>().ToListAsync(ct);
     }
 
     public async Task<T?> GetByIdAsync(int id, CancellationToken ct)
