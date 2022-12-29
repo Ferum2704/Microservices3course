@@ -33,4 +33,4 @@ spec:
       volumes:
         - name: mssqldb
           persistentVolumeClaim:
-            claimName: mssql-pvc
+            claimName: mssql-pvc-lab2

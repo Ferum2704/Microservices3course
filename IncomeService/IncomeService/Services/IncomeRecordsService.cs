@@ -31,7 +31,10 @@ public class IncomeRecordsService : IIncomeRecordsService
     {
         return _unitOfWork.IncomeRecords.GetFirstOrDefault(x => x.Id == id);
     }
-
+    public IEnumerable<IncomeRecord> GetAllAsync(CancellationToken ct)
+    {
+        return _unitOfWork.IncomeRecords.GetAll();
+    }
     public async Task<IncomeRecord> UpdateAsync(IncomeRecord spending, CancellationToken ct)
     {
         var updated = _unitOfWork.IncomeRecords.Update(spending);

@@ -11,6 +11,5 @@ kubectl delete ingress income-ingress
 kubectl delete configmap mssql-config
 kubectl delete service mssql-service
 kubectl delete deploy mssql-deployment
-kubectl delete pvc mssql-pvc
 kubectl delete secret mssql-secret
 pause

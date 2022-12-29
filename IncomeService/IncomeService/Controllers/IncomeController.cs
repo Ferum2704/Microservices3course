@@ -37,7 +37,13 @@ namespace IncomeService.Controllers
                 return BadRequest(ex);
             }
         }
-
+        [HttpGet]
+        [Route("get")]
+        public IActionResult GetAllIncomes(CancellationToken ct)
+        {
+            var incomes = _incomeRecordsService.GetAllAsync(ct);
+            return Ok(incomes);
+        }
         [HttpGet]
         [Route("get/{id:int}")]
         public IActionResult GetIncomeById(int id, CancellationToken ct)
