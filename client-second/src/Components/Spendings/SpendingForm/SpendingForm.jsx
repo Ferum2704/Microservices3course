@@ -18,7 +18,7 @@ export default function SpendingForm(props) {
         currency: spendingForm.currency,
       })
       .then(props.getAllFunction())
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
 
   const updateClick = () => {
@@ -30,7 +30,7 @@ export default function SpendingForm(props) {
         currency: spendingForm.currency,
       })
       .then(props.getAllFunction())
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
 
   const changeSum = (e) =>
@@ -84,7 +84,7 @@ export default function SpendingForm(props) {
               <button
                 type="button"
                 className="btn btn-primary float-start"
-                onClick={createClick}
+                onClick={() => createClick()}
               >
                 Create
               </button>
@@ -94,7 +94,7 @@ export default function SpendingForm(props) {
               <button
                 type="button"
                 className="btn btn-primary float-start"
-                onClick={updateClick}
+                onClick={() => updateClick()}
               >
                 Update
               </button>

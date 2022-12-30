@@ -27,7 +27,7 @@ export default function IncomeForm(props) {
         date: incomeForm.date,
       })
       .then(props.getAllFunction())
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
 
   const updateClick = () => {
@@ -39,7 +39,7 @@ export default function IncomeForm(props) {
         date: incomeForm.date,
       })
       .then(props.getAllFunction())
-      .catch((error) => alert(error));
+      .catch((error) => console.log(error));
   };
   const changeSum = (e) =>
     setIncomeForm((previous) => ({
@@ -83,7 +83,7 @@ export default function IncomeForm(props) {
               <input
                 type="text"
                 className="form-control"
-                value={incomeForm.value}
+                value={incomeForm.sum}
                 onChange={changeSum}
               />
             </div>
@@ -92,7 +92,7 @@ export default function IncomeForm(props) {
               <input
                 type="text"
                 className="form-control"
-                value={incomeForm.item}
+                value={incomeForm.categoryName}
                 onChange={changeCategoryName}
               />
             </div>
@@ -114,7 +114,7 @@ export default function IncomeForm(props) {
               <button
                 type="button"
                 className="btn btn-primary float-start"
-                onClick={createClick}
+                onClick={() => createClick()}
               >
                 Create
               </button>
@@ -124,7 +124,7 @@ export default function IncomeForm(props) {
               <button
                 type="button"
                 className="btn btn-primary float-start"
-                onClick={updateClick}
+                onClick={() => updateClick()}
               >
                 Update
               </button>
