@@ -38,7 +38,7 @@ namespace IncomeService.Controllers
             }
         }
         [HttpGet]
-        [Route("get")]
+        [Route("get-all")]
         public IActionResult GetAllIncomes(CancellationToken ct)
         {
             var incomes = _incomeRecordsService.GetAllAsync(ct);
