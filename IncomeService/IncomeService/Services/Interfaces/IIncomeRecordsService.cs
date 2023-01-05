@@ -9,4 +9,5 @@ public interface IIncomeRecordsService
     IncomeRecord? GetByIdAsync(int id, CancellationToken ct);
     IEnumerable<IncomeRecord> GetAllAsync(CancellationToken ct);
     Task<IncomeRecord> UpdateAsync(IncomeRecord spending, CancellationToken ct);
+    int GetTotal();
 }

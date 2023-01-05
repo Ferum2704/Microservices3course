@@ -42,4 +42,10 @@ public class IncomeRecordsService : IIncomeRecordsService
 
         return updated;
     }
+
+    public int GetTotal()
+    {
+        var incomes = _unitOfWork.IncomeRecords.GetAll();
+        return decimal.ToInt32(incomes.Select(x => x.Sum).Sum());
+    }
 }

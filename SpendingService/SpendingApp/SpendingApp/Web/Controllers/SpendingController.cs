@@ -9,10 +9,12 @@ namespace SpendingApp.Web.Controllers;
 public class SpendingController : ControllerBase
 {
     private readonly ISpendingService _spendingService;
+    private readonly IStatisticsService _statisticsService;
 
-    public SpendingController(ISpendingService spendingService)
+    public SpendingController(ISpendingService spendingService, IStatisticsService statisticsService)
     {
         _spendingService = spendingService;
+        _statisticsService = statisticsService;
     }
 
     [HttpGet]
@@ -53,7 +55,7 @@ public class SpendingController : ControllerBase
     [Route("get-all")]
     public async Task<IActionResult> GetAll(CancellationToken ct)
     {
-        var spending = await _spendingService.GetByAllAsync(ct);
+        var spending = await _spendingService.GetAllAsync(ct);
 
         return Ok(spending);
     }
@@ -65,5 +67,27 @@ public class SpendingController : ControllerBase
         await _spendingService.RemoveByIdAsync(id, ct);
 
         return Ok();
+    }
+
+    [HttpGet]
+    [Route("total-profit")]
+    public async Task<IActionResult> GetTotalProfit(CancellationToken ct)
+    {
+        var totalProfit = await _statisticsService.GetTotalProfitAsync(ct);
+
+        return Ok(totalProfit);
+    }
+
+    [HttpGet]
+    [Route("failures")]
+    public async Task<IActionResult> TryGetFailures(CancellationToken ct)
+    {
+        var (retryMessage, brokenCircuitMessage) = await _statisticsService.TryGetFailuresAsync(ct);
+
+        return Ok(new
+        {
+            retryMessage,
+            brokenCircuitMessage
+        });
     }
 }

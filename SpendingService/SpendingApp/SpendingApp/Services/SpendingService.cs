@@ -38,7 +38,7 @@ public class SpendingService : ISpendingService
         return await _unitOfWork.Spendings.GetByIdAsync(id, ct);
     }
 
-    public async Task<List<Spending>> GetByAllAsync(CancellationToken ct)
+    public async Task<List<Spending>> GetAllAsync(CancellationToken ct)
     {
         return await _unitOfWork.Spendings.GetAllAsync(ct);
     }

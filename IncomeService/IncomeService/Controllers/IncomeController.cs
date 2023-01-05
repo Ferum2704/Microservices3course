@@ -1,5 +1,4 @@
 ﻿using IncomeService.Models;
-using IncomeService.Services;
 using IncomeService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -66,6 +65,21 @@ namespace IncomeService.Controllers
         {
             await _incomeRecordsService.RemoveByIdAsync(id, ct);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("total")]
+        public IActionResult GetTotalIncomeValue()
+        {
+            var total = _incomeRecordsService.GetTotal();
+            return Ok(total);
+        }
+
+        [HttpGet]
+        [Route("failure/{num:int}")]
+        public IActionResult GetFailure(int num)
+        {
+            return num == 4 ? Ok() : StatusCode(500);
         }
     }
 }
