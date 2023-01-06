@@ -16,9 +16,9 @@ public class IncomeClient : IIncomeClient
     {
         Uri uri = new("https://localhost:7089/income/total1");
 
-        await _httpClient.GetAsync("/income/total", ct);
+        var response = await _httpClient.GetAsync("/income/total", ct);
 
-        var response = await _httpClient.GetAsync(uri, ct);
+        //var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
         {
             throw new Exception("server error");
@@ -36,7 +36,7 @@ public class IncomeClient : IIncomeClient
         {
             try
             {
-                Uri uri = new($"https://localhost:7089/income/failure/{i}");
+                Uri uri = new($"/income/failure/{i}");
                 await _httpClient.GetAsync(uri, ct);
                 numberOfRetries++;
             }
