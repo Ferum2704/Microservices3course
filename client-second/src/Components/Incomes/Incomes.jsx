@@ -10,6 +10,8 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 export default function Incomes() {
+    var utc = require("dayjs/plugin/utc");
+    dayjs.extend(utc);
   const [incomes, setIncomes] = useState([]);
   const [incomeForm, setIncomeForm] = useState({
     incomeId: 0,
