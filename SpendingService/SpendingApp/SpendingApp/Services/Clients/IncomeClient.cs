@@ -14,14 +14,14 @@ public class IncomeClient : IIncomeClient
 
     public async Task<int> GetTotalIncome(CancellationToken ct)
     {
-        Uri uri = new("https://localhost:7089/income/total1");
+        //Uri uri = new("https://localhost:7089/income/total1");
 
-        var response = await _httpClient.GetAsync("/income/total", ct);
+        var response = await _httpClient.GetAsync("http://local-income:8080/income/total", ct);
 
         //var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
         {
-            throw new Exception("server error");
+            throw new Exception(response.StatusCode.ToString());
         }
 
         var result = await response.Content.ReadAsStringAsync(ct);
@@ -36,7 +36,7 @@ public class IncomeClient : IIncomeClient
         {
             try
             {
-                Uri uri = new($"/income/failure/{i}");
+                Uri uri = new($"http://local-income:8080/income/failure/{i}");
                 await _httpClient.GetAsync(uri, ct);
                 numberOfRetries++;
             }
