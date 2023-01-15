@@ -73,9 +73,16 @@ public class SpendingController : ControllerBase
     [Route("total-profit")]
     public async Task<IActionResult> GetTotalProfit(CancellationToken ct)
     {
-        var totalProfit = await _statisticsService.GetTotalProfitAsync(ct);
+        try
+        {
+            var totalProfit = await _statisticsService.GetTotalProfitAsync(ct);
 
-        return Ok(totalProfit);
+            return Ok(totalProfit);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet]

@@ -19,7 +19,7 @@ public class IncomeClient : IIncomeClient
         var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
         {
-            throw new Exception("server error");
+            throw new Exception(response.StatusCode.ToString());
         }
 
         var result = await response.Content.ReadAsStringAsync(ct);
