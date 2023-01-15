@@ -82,12 +82,8 @@ public class SpendingController : ControllerBase
     [Route("failures")]
     public async Task<IActionResult> TryGetFailures(CancellationToken ct)
     {
-        var (retryMessage, brokenCircuitMessage) = await _statisticsService.TryGetFailuresAsync(ct);
+        var failureModel = await _statisticsService.TryGetFailuresAsync(ct);
 
-        return Ok(new
-        {
-            retryMessage,
-            brokenCircuitMessage
-        });
+        return Ok(failureModel);
     }
 }

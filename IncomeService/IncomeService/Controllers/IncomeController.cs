@@ -1,4 +1,5 @@
 ﻿using IncomeService.Models;
+using IncomeService.Services;
 using IncomeService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +10,12 @@ namespace IncomeService.Controllers
     public class IncomeController : ControllerBase
     {
         private readonly IIncomeRecordsService _incomeRecordsService;
+        private readonly NumOfRetriesHolder _numOfRetriesHolder;
 
-        public IncomeController(IIncomeRecordsService incomeRecordsService)
+        public IncomeController(IIncomeRecordsService incomeRecordsService, NumOfRetriesHolder numOfRetriesHolder)
         {
             _incomeRecordsService = incomeRecordsService;
+            _numOfRetriesHolder = numOfRetriesHolder;
         }
 
         [HttpGet]
@@ -75,11 +78,26 @@ namespace IncomeService.Controllers
             return Ok(total);
         }
 
+
         [HttpGet]
-        [Route("failure/{num:int}")]
-        public IActionResult GetFailure(int num)
+        [Route("failure")]
+        public IActionResult GetFailure(bool isForRetries)
         {
-            return num == 4 ? Ok() : StatusCode(500);
+            if (!isForRetries)
+            {
+                Thread.Sleep(700);
+                return StatusCode(500);
+            }
+
+            if (_numOfRetriesHolder.NumOfRetries == 4)
+            {
+                var result = _numOfRetriesHolder.NumOfRetries;
+                _numOfRetriesHolder.NumOfRetries = 0;
+                return Ok(result);
+            }
+
+            _numOfRetriesHolder.NumOfRetries++;
+            return StatusCode(500);
         }
     }
 }

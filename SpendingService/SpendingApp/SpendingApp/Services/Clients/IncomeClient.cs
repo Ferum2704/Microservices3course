@@ -14,9 +14,7 @@ public class IncomeClient : IIncomeClient
 
     public async Task<int> GetTotalIncome(CancellationToken ct)
     {
-        Uri uri = new("https://localhost:7089/income/total1");
-
-        await _httpClient.GetAsync("/income/total", ct);
+        Uri uri = new("https://localhost:7089/income/total");
 
         var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
@@ -28,24 +26,56 @@ public class IncomeClient : IIncomeClient
         return int.Parse(result);
     }
 
-    public async Task<(string retryMessage, string brokenCircuitMessage)> TryGetFailuresAsync(CancellationToken ct)
+    public async Task<int> TryGetRetriesAsync(CancellationToken ct)
     {
-        var numberOfRetries = 0;
-        var brokenCircuitMessage = string.Empty;
-        for (var i = 0; i < 3; i++)
+        Uri uri = new("https://localhost:7089/income/failure?isForRetries=true");
+
+        var response = await _httpClient.GetAsync(uri, ct);
+        if (!response.IsSuccessStatusCode)
         {
-            try
-            {
-                Uri uri = new($"https://localhost:7089/income/failure/{i}");
-                await _httpClient.GetAsync(uri, ct);
-                numberOfRetries++;
-            }
-            catch (BrokenCircuitException)
-            {
-                brokenCircuitMessage = nameof(BrokenCircuitException);
-            }
+            throw new Exception("server error");
         }
 
-        return ($"number of retries: {numberOfRetries}", brokenCircuitMessage);
+        var numberOfRetries = await response.Content.ReadAsStringAsync(ct);
+        return int.Parse(numberOfRetries);
+    }
+
+    public async Task<bool> TryGetTimeoutAsync()
+    {
+        Uri uri = new("https://localhost:7089/income/failure");
+        try
+        {
+            var ct = new CancellationTokenSource(TimeSpan.FromMilliseconds(500)).Token;
+            await _httpClient.GetAsync(uri, ct);
+        }
+        catch (TaskCanceledException)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public async Task<(int NumberOfRetriesBeforeFailure, bool IsCircuitBrkoen)> TryGetBrokenCircuitAsync(
+        CancellationToken ct)
+    {
+        var numberOfRetriesBeforeFailure = 0;
+        var isCircuitBroken = false;
+
+        try
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                Uri uri = new("https://localhost:7089/income/failure");
+                await _httpClient.GetAsync(uri, ct);
+                numberOfRetriesBeforeFailure++;
+            }
+        }
+        catch (BrokenCircuitException)
+        {
+            isCircuitBroken = true;
+        }
+
+        return (numberOfRetriesBeforeFailure, isCircuitBroken);
     }
 }

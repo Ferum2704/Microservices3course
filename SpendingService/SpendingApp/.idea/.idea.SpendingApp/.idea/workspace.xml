@@ -8,24 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4cd86d-85fa-4ccb-8d07-c2e42d2f6dfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/Clients/IncomeClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IIncomeClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IStatisticsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpendingApp/Services/StatisticsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/NumOfRetriesHolder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpendingApp/Models/FailureModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Controllers/IncomeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/IncomeRecordsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/IncomeRecordsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/Interfaces/IIncomeRecordsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/Interfaces/IIncomeRecordsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/MigrateExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Persistence/MigrateExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/DI/AddServicesDependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/Services/DI/AddServicesDependencyInjection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../IncomeService/IncomeService/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../IncomeService/IncomeService/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpendingApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpendingApp/Persistence/Migrations/Helpers/MigrationsHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Persistence/Migrations/Helpers/MigrationsHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/DI/AddServicesDependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/DI/AddServicesDependencyInjection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/ISpendingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/ISpendingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/SpendingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/SpendingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpendingApp/SpendingApp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/SpendingApp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/Clients/IncomeClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/Clients/IncomeClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IIncomeClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IIncomeClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IStatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/Interfaces/IStatisticsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpendingApp/Services/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Services/StatisticsService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpendingApp/Web/Controllers/SpendingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/Web/Controllers/SpendingController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpendingApp/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpendingApp/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/client/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/client/charts/common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/common-0.1.0.tgz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/incomeService/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/incomeService/charts/common-0.1.0.tgz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../helm/v4/charts/spendingService/charts/common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/../../helm/v4/charts/spendingService/charts/common-0.1.0.tgz" afterDir="false" />
     </list>
@@ -50,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/../../IncomeService/IncomeService/DataAccess/DI/AddDataAccessDependencyInjection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/575c31ecc35a636b6f962cb71d53992552941a18982aae1c8e6c16305cc3761b/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6518e12429e640b855e84dbcb556279a6dcdecc0f25132fcbc5510f956f771e7/CallSiteFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/aacf6151870041ec50684429cbd3c1582d8b1ada7b65a7a9482fec6e935a55/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9d4f4ac7db6d2c5d183ab2d92602280ed4349fd6e6a1b6313546b3d01fdab5/ServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3685646f2f29e671aaf1cda7eb01c84daaec2ae61820d2c444edc3121d696/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5be2cff525124c1133cfcc6cb4e2780544dbce621566e52f256ebeb2e1b996/RelationalCommand.cs" root0="SKIP_HIGHLIGHTING" />
@@ -67,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.07317073" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.09779951" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -138,6 +136,10 @@
       <workItem from="1672331166628" duration="1594000" />
       <workItem from="1672400778444" duration="418000" />
       <workItem from="1672944369586" duration="11897000" />
+      <workItem from="1673188933599" duration="287000" />
+      <workItem from="1673290890959" duration="594000" />
+      <workItem from="1673379808831" duration="2618000" />
+      <workItem from="1673770621914" duration="6103000" />
     </task>
     <servers />
   </component>
@@ -183,10 +185,23 @@
               <option value="371" />
             </startOffsets>
             <endOffsets>
-              <option value="425" />
+              <option value="424" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/SpendingApp/Services/Clients/IncomeClient.cs</url>
+          <line>73</line>
+          <properties documentPath="D:\MY PROGS AMA GANGSTA NAH\microservices\laba1\Microservices3course\SpendingService\SpendingApp\SpendingApp\Services\Clients\IncomeClient.cs" initialLine="73" containingFunctionPresentation="method 'TryGetBrokenCircuitAsync'">
+            <startOffsets>
+              <option value="2094" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2095" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,3 +1,4 @@
+using SpendingApp.Models;
 using SpendingApp.Services.Interfaces;
 
 namespace SpendingApp.Services;
@@ -23,8 +24,17 @@ public class StatisticsService : IStatisticsService
         return totalIncomeValue - totalSpendingValue;
     }
 
-    public async Task<(string retryMessage, string brokenCircuitMessage)> TryGetFailuresAsync(CancellationToken ct)
+    public async Task<FailureModel> TryGetFailuresAsync(CancellationToken ct)
     {
-        return await _incomeClient.TryGetFailuresAsync(ct);
+        var result = new FailureModel
+        {
+            NumberOfRetries = await _incomeClient.TryGetRetriesAsync(ct),
+            IsRequestCancelled = await _incomeClient.TryGetTimeoutAsync(),
+        };
+
+        (result.NumberOfRetriesForBrokenCircuit, result.IsCircuitBroken) =
+            await _incomeClient.TryGetBrokenCircuitAsync(ct);
+
+        return result;
     }
 }
