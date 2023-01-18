@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Spendings from "./Components/Spendings/Spendings";
 import Incomes from "./Components/Incomes/Incomes";
+import Producer from "./Components/Producer";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<Navigate to="/Spendings" />} />
             <Route path="/Spendings" element={<Spendings />} />
             <Route path="/Incomes" element={<Incomes />} />
+            <Route path="/Producer" element={<Producer />} />
           </Routes>
         </Layout>
       </Router>
