@@ -14,7 +14,7 @@ public class IncomeClient : IIncomeClient
 
     public async Task<int> GetTotalIncome(CancellationToken ct)
     {
-        Uri uri = new("https://localhost:7089/income/total");
+        Uri uri = new("http://local-income:8080/income/total");
 
         var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
@@ -28,7 +28,7 @@ public class IncomeClient : IIncomeClient
 
     public async Task<int> TryGetRetriesAsync(CancellationToken ct)
     {
-        Uri uri = new("https://localhost:7089/income/failure?isForRetries=true");
+        Uri uri = new("http://local-income:8080/income/failure?isForRetries=true");
 
         var response = await _httpClient.GetAsync(uri, ct);
         if (!response.IsSuccessStatusCode)
@@ -42,7 +42,7 @@ public class IncomeClient : IIncomeClient
 
     public async Task<bool> TryGetTimeoutAsync()
     {
-        Uri uri = new("https://localhost:7089/income/failure");
+        Uri uri = new("http://local-income:8080/income/failure");
         try
         {
             var ct = new CancellationTokenSource(TimeSpan.FromMilliseconds(500)).Token;
@@ -66,7 +66,7 @@ public class IncomeClient : IIncomeClient
         {
             for (var i = 0; i < 3; i++)
             {
-                Uri uri = new("https://localhost:7089/income/failure");
+                Uri uri = new("http://local-income:8080/income/failure");
                 await _httpClient.GetAsync(uri, ct);
                 numberOfRetriesBeforeFailure++;
             }

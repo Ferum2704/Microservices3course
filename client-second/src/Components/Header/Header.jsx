@@ -25,6 +25,10 @@ function Header() {
           value="/Incomes"
           label={<div className="iconLabel">Incomes</div>}
         />
+        <Tab
+          value="/Producer"
+          label={<div className="iconLabel">Producer</div>}
+        />
       </Tabs>
     </Box>
   );

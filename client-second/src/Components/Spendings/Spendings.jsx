@@ -74,8 +74,20 @@ export default function Spendings() {
         .catch((error) => console.log(error));
     }
   };
+
+  const readProducerMessageClick = () => 0;
   return (
     <div>
+      <button
+        type="button"
+        className="btn btn-danger m-2 float-start"
+        id="producerMessageBtn"
+        data-bs-toggle="modal"
+        data-bs-target="#producerMessageModal"
+        onClick={() => readProducerMessageClick()}
+      >
+        Read message from producer
+      </button>
       <button
         type="button"
         className="btn btn-primary m-2 float-end"
@@ -179,6 +191,24 @@ export default function Spendings() {
                 </button>
               ) : null}
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="producerMessageModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="producerMessageModalLabel">
+                Producer message to Spendings
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Message text</div>
           </div>
         </div>
       </div>
