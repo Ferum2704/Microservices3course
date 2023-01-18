@@ -99,8 +99,7 @@ public class SpendingController : ControllerBase
     [Route("first-topic-message")]
     public async Task<IActionResult> SendFirstTopicMessage(CancellationToken ct)
     {
-        var a = new Producer();
-        a.Bruh("firstTopic");
+        new Producer().Bruh("firstTopic");
         return Ok();
     }
 
@@ -108,8 +107,7 @@ public class SpendingController : ControllerBase
     [Route("second-topic-message")]
     public async Task<IActionResult> SendSecondTopicMessage(CancellationToken ct)
     {
-        var a = new Producer();
-        a.Bruh("secondTopic");
+        new Producer().Bruh("secondTopic");
         return Ok();
     }
 }

@@ -103,20 +103,16 @@ namespace IncomeService.Controllers
 
         [HttpGet]
         [Route("first-topic-message")]
-        public IActionResult GetFirstTopicMessage(CancellationToken ct)
+        public IActionResult GetFirstTopicMessage()
         {
-            var a = new Consumer();
-            a.Bruh("firstTopic");
-            return Ok();
+            return Ok(new Consumer().Bruh("firstTopic"));
         }
 
         [HttpGet]
         [Route("second-topic-message")]
-        public IActionResult GetSecondTopicMessage(CancellationToken ct)
+        public IActionResult GetSecondTopicMessage()
         {
-            var a = new Consumer();
-            a.Bruh("secondTopic");
-            return Ok();
+            return Ok(new Consumer().Bruh("secondTopic"));
         }
     }
 }

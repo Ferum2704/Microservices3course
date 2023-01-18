@@ -4,9 +4,9 @@ namespace IncomeService.Messages;
 
 public class Consumer
 {
-    public void Bruh(string topic)
+    public string Bruh(string topic)
     {
-        var cts = new CancellationTokenSource();
+        var cts = new CancellationTokenSource(TimeSpan.FromSeconds(10));
         Console.CancelKeyPress += (_, e) =>
         {
             e.Cancel = true; // prevent the process from terminating.
@@ -19,6 +19,8 @@ public class Consumer
             GroupId = "kafka-dotnet-getting-started",
             AutoOffsetReset = AutoOffsetReset.Earliest
         };
+
+        var message = "NONE";
         using var consumer = new ConsumerBuilder<string, string>(config).Build();
         consumer.Subscribe(topic);
         try
@@ -26,8 +28,9 @@ public class Consumer
             while (true)
             {
                 var cr = consumer.Consume(cts.Token);
-                Console.WriteLine(
-                    $"Consumed event from topic {topic} with key {cr?.Message?.Key ?? "NONE"} and value {cr?.Message?.Value ?? "NONE"}");
+                message =
+                    $"Consumed event from topic {topic} with key {cr?.Message?.Key ?? "NONE"} and value {cr?.Message?.Value ?? "NONE"}";
+                Console.WriteLine(message);
             }
         }
         catch (OperationCanceledException)
@@ -38,5 +41,7 @@ public class Consumer
         {
             consumer.Close();
         }
+
+        return message;
     }
 }
