@@ -21,4 +21,4 @@ kafka:
   provisioning:
     enabled: true               # при запуску будуть створені перелічені топіки
     topics:
-     - name: demo
+     - name: firstTopic
