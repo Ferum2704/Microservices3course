@@ -96,11 +96,20 @@ public class SpendingController : ControllerBase
     }
 
     [HttpPost]
-    [Route("message")]
-    public async Task<IActionResult> SendMessage(CancellationToken ct)
+    [Route("first-topic-message")]
+    public async Task<IActionResult> SendFirstTopicMessage(CancellationToken ct)
     {
         var a = new Producer();
-        a.Bruh();
+        a.Bruh("firstTopic");
+        return Ok();
+    }
+
+    [HttpPost]
+    [Route("second-topic-message")]
+    public async Task<IActionResult> SendSecondTopicMessage(CancellationToken ct)
+    {
+        var a = new Producer();
+        a.Bruh("secondTopic");
         return Ok();
     }
 }

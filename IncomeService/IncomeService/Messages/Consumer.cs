@@ -4,10 +4,8 @@ namespace IncomeService.Messages;
 
 public class Consumer
 {
-    public void Bruh()
+    public void Bruh(string topic)
     {
-        const string topic = "firstTopic";
-
         var cts = new CancellationTokenSource();
         Console.CancelKeyPress += (_, e) =>
         {
@@ -29,7 +27,7 @@ public class Consumer
             {
                 var cr = consumer.Consume(cts.Token);
                 Console.WriteLine(
-                    $"Consumed event from topic {topic} with key {cr.Message.Key} and value {cr.Message.Value}");
+                    $"Consumed event from topic {topic} with key {cr?.Message?.Key ?? "NONE"} and value {cr?.Message?.Value ?? "NONE"}");
             }
         }
         catch (OperationCanceledException)

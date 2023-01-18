@@ -4,14 +4,12 @@ namespace SpendingApp.Messages;
 
 public class Producer
 {
-    public void Bruh()
+    public void Bruh(string topic)
     {
         var config = new ProducerConfig
         {
             BootstrapServers = "bootstrap.servers=kafka.application.svc.cluster.local:9092"
         };
-
-        const string topic = "firstTopic";
 
         using var producer = new ProducerBuilder<string, string>(config).Build();
         var numProduced = 0;
