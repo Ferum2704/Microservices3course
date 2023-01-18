@@ -6,11 +6,6 @@ public class Consumer
 {
     public void Bruh()
     {
-        var configuration = new ConfigurationBuilder().AddIniFile("bruh").Build();
-
-        configuration["group.id"] = "kafka-dotnet-getting-started";
-        configuration["auto.offset.reset"] = "earliest";
-
         const string topic = "firstTopic";
 
         var cts = new CancellationTokenSource();
