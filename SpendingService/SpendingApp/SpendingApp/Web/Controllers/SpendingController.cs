@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SpendingApp.Messages;
 using SpendingApp.Models;
 using SpendingApp.Services.Interfaces;
 
@@ -92,5 +93,14 @@ public class SpendingController : ControllerBase
         var failureModel = await _statisticsService.TryGetFailuresAsync(ct);
 
         return Ok(failureModel);
+    }
+
+    [HttpPost]
+    [Route("message")]
+    public async Task<IActionResult> SendMessage(CancellationToken ct)
+    {
+        var a = new Producer();
+        a.Bruh();
+        return Ok();
     }
 }

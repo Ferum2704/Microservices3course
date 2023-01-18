@@ -1,4 +1,5 @@
-﻿using IncomeService.Models;
+﻿using IncomeService.Messages;
+using IncomeService.Models;
 using IncomeService.Services;
 using IncomeService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -98,6 +99,15 @@ namespace IncomeService.Controllers
 
             _numOfRetriesHolder.NumOfRetries++;
             return StatusCode(500);
+        }
+
+        [HttpGet]
+        [Route("message")]
+        public IActionResult GetMessage(CancellationToken ct)
+        {
+            var a = new Consumer();
+            a.Bruh();
+            return Ok();
         }
     }
 }
